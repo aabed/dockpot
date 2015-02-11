@@ -1,0 +1,13 @@
+2015-02-11 16:06:58 - [POT  ] testing-honssh2
+2015-02-11 16:06:55 - [SSH  ] Incoming Connection from 10.10.20.166:35325 - SSH-2.0-OpenSSH_6.2
+2015-02-11 16:06:58 - [SSH  ] Login Successful: root:root
+2015-02-11 16:06:59 - [TERM0] Opened Channel
+2015-02-11 16:07:11 - [TERM0] Command Executed: pwd
+2015-02-11 16:07:20 - [TERM0] Command Executed: ls Deskttop
+2015-02-11 16:07:23 - [TERM0] Command Executed: [A^C
+2015-02-11 16:08:52 - [TERM0] Command Executed: ps aux | grep ssh
+2015-02-11 16:08:59 - [TERM0] Command Executed: netst -nltpst
+2015-02-11 16:09:04 - [TERM0] Command Executed: touch lol
+2015-02-11 16:09:11 - [TERM0] Command Executed: ls
+2015-02-11 16:09:12 - [TERM0] Closed Channel
+2015-02-11 16:09:12 - [SSH  ] Lost Connection with 10.10.20.166

@@ -1,0 +1,425 @@
+2015-02-11 16:00:34+0200 [-] Log opened.
+2015-02-11 16:00:34+0200 [-] twistd 15.0.0 (/home/aabed/honssh/env/bin/python 2.7.6) starting up.
+2015-02-11 16:00:34+0200 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2015-02-11 16:00:34+0200 [-] HonsshServerFactory starting on 2222
+2015-02-11 16:00:34+0200 [-] Starting factory <honssh.server.HonsshServerFactory instance at 0x7fa6700d4fc8>
+2015-02-11 16:00:34+0200 [HonsshSlimClientTransport,client] [CLIENT] - SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2
+2015-02-11 16:00:34+0200 [HonsshSlimClientTransport,client] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:00:34+0200 [HonsshSlimClientTransport,client] connection lost
+2015-02-11 16:00:34+0200 [HonsshSlimClientTransport,client] Stopping factory <honssh.client.HonsshSlimClientFactory instance at 0x7fa6700db128>
+2015-02-11 16:00:53+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:00:53+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:00:54+0200 [honssh.server.HonsshServerFactory] Unhandled Error
+	Traceback (most recent call last):
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 73, in callWithContext
+	    return context.call({ILogContext: newCtx}, func, *args, **kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+	    return func(*args,**kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/posixbase.py", line 614, in _doReadOrWrite
+	    why = selectable.doRead()
+	--- <exception caught here> ---
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/tcp.py", line 1080, in doRead
+	    protocol.makeConnection(transport)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/protocol.py", line 487, in makeConnection
+	    self.connectionMade()
+	  File "/home/aabed/honssh/honssh/server.py", line 49, in connectionMade
+	    try:
+	  File "/home/aabed/honssh/honssh/server.py", line 49, in connectionMade
+	    try:
+	  File "/usr/lib/python2.7/bdb.py", line 49, in trace_dispatch
+	    return self.dispatch_line(frame)
+	  File "/usr/lib/python2.7/bdb.py", line 68, in dispatch_line
+	    if self.quitting: raise BdbQuit
+	bdb.BdbQuit: 
+	
+2015-02-11 16:00:54+0200 [HonsshServerTransport,0,10.10.20.166] Unhandled Error
+	Traceback (most recent call last):
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 88, in callWithLogger
+	    return callWithContext({"system": lp}, func, *args, **kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 73, in callWithContext
+	    return context.call({ILogContext: newCtx}, func, *args, **kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+	    return func(*args,**kw)
+	--- <exception caught here> ---
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/posixbase.py", line 614, in _doReadOrWrite
+	    why = selectable.doRead()
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/tcp.py", line 215, in doRead
+	    return self._dataReceived(data)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/tcp.py", line 221, in _dataReceived
+	    rval = self.protocol.dataReceived(data)
+	  File "/home/aabed/honssh/honssh/honsshServer.py", line 64, in dataReceived
+	    self.sendKexInit()
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/conch/ssh/transport.py", line 301, in sendKexInit
+	    self.sendPacket(MSG_KEXINIT, self.ourKexInitPayload[1:])
+	  File "/home/aabed/honssh/honssh/server.py", line 120, in sendPacket
+	    honsshServer.HonsshServer.sendPacket(self, messageNum, payload)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/conch/ssh/transport.py", line 350, in sendPacket
+	    bs = self.currentEncryptions.encBlockSize
+	exceptions.AttributeError: HonsshServerTransport instance has no attribute 'currentEncryptions'
+	
+2015-02-11 16:00:54+0200 [HonsshServerTransport,0,10.10.20.166] connection lost
+2015-02-11 16:00:54+0200 [HonsshServerTransport,0,10.10.20.166] Unhandled Error
+	Traceback (most recent call last):
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/application/app.py", line 316, in runReactorWithLogging
+	    reactor.run()
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/base.py", line 1192, in run
+	    self.mainLoop()
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/base.py", line 1204, in mainLoop
+	    self.doIteration(t)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/epollreactor.py", line 396, in doPoll
+	    log.callWithLogger(selectable, _drdw, selectable, fd, event)
+	--- <exception caught here> ---
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 88, in callWithLogger
+	    return callWithContext({"system": lp}, func, *args, **kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 73, in callWithContext
+	    return context.call({ILogContext: newCtx}, func, *args, **kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+	    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+	    return func(*args,**kw)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/posixbase.py", line 627, in _doReadOrWrite
+	    self._disconnectSelectable(selectable, why, inRead)
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/posixbase.py", line 263, in _disconnectSelectable
+	    selectable.connectionLost(failure.Failure(why))
+	  File "/home/aabed/honssh/env/local/lib/python2.7/site-packages/twisted/internet/tcp.py", line 299, in connectionLost
+	    protocol.connectionLost(reason)
+	  File "/home/aabed/honssh/honssh/server.py", line 96, in connectionLost
+	    self.out.connectionLost()
+	exceptions.AttributeError: HonsshServerTransport instance has no attribute 'out'
+	
+2015-02-11 16:03:19+0200 [-] Received SIGTERM, shutting down.
+2015-02-11 16:03:19+0200 [-] (TCP Port 2222 Closed)
+2015-02-11 16:03:19+0200 [-] Stopping factory <honssh.server.HonsshServerFactory instance at 0x7fa6700d4fc8>
+2015-02-11 16:03:19+0200 [-] Main loop terminated.
+2015-02-11 16:03:19+0200 [-] Server Shut Down.
+2015-02-11 16:03:20+0200 [-] Log opened.
+2015-02-11 16:03:20+0200 [-] twistd 15.0.0 (/home/aabed/honssh/env/bin/python 2.7.6) starting up.
+2015-02-11 16:03:20+0200 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2015-02-11 16:03:20+0200 [-] HonsshServerFactory starting on 2222
+2015-02-11 16:03:20+0200 [-] Starting factory <honssh.server.HonsshServerFactory instance at 0x7fac51821a70>
+2015-02-11 16:03:20+0200 [HonsshSlimClientTransport,client] [CLIENT] - SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2
+2015-02-11 16:03:20+0200 [HonsshSlimClientTransport,client] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:03:20+0200 [HonsshSlimClientTransport,client] connection lost
+2015-02-11 16:03:20+0200 [HonsshSlimClientTransport,client] Stopping factory <honssh.client.HonsshSlimClientFactory instance at 0x7fac5182a4d0>
+2015-02-11 16:03:34+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:03:34+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:03:35+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:03:35+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7fac518232d8>
+2015-02-11 16:03:35+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:03:35+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:03:35+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:03:35+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7fac518232d8>
+2015-02-11 16:03:35+0200 [HonsshServerTransport,0,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:03:35+0200 [HonsshServerTransport,0,10.10.20.166] outgoing: aes128-ctr hmac-md5 zlib
+2015-02-11 16:03:35+0200 [HonsshServerTransport,0,10.10.20.166] incoming: aes128-ctr hmac-md5 zlib
+2015-02-11 16:03:36+0200 [HonsshServerTransport,0,10.10.20.166] NEW KEYS
+2015-02-11 16:03:36+0200 [HonsshServerTransport,0,10.10.20.166] [SERVER] CONNECTION TO HONEYPOT NOT READY, BUFFERING PACKET
+2015-02-11 16:03:45+0200 [-] [SERVER][ERROR] COULD NOT CONNECT TO HONEYPOT AFTER 10 SECONDS - DISCONNECTING CLIENT
+2015-02-11 16:03:45+0200 [-] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:03:45+0200 [HonsshServerTransport,0,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:03:45+0200 [HonsshServerTransport,0,10.10.20.166] connection lost
+2015-02-11 16:03:45+0200 [HonsshServerTransport,0,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:03:54+0200 [-] Received SIGTERM, shutting down.
+2015-02-11 16:03:54+0200 [-] (TCP Port 2222 Closed)
+2015-02-11 16:03:54+0200 [-] Stopping factory <honssh.server.HonsshServerFactory instance at 0x7fac51821a70>
+2015-02-11 16:03:54+0200 [-] Main loop terminated.
+2015-02-11 16:03:54+0200 [-] Server Shut Down.
+2015-02-11 16:03:55+0200 [-] Log opened.
+2015-02-11 16:03:55+0200 [-] twistd 15.0.0 (/home/aabed/honssh/env/bin/python 2.7.6) starting up.
+2015-02-11 16:03:55+0200 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2015-02-11 16:03:55+0200 [-] HonsshServerFactory starting on 2222
+2015-02-11 16:03:55+0200 [-] Starting factory <honssh.server.HonsshServerFactory instance at 0x7f2211ffafc8>
+2015-02-11 16:03:55+0200 [HonsshSlimClientTransport,client] [CLIENT] - SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2
+2015-02-11 16:03:55+0200 [HonsshSlimClientTransport,client] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:03:55+0200 [HonsshSlimClientTransport,client] connection lost
+2015-02-11 16:03:55+0200 [HonsshSlimClientTransport,client] Stopping factory <honssh.client.HonsshSlimClientFactory instance at 0x7f2212001128>
+2015-02-11 16:04:05+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:04:05+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:04:05+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:04:05+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7f2211ffc950>
+2015-02-11 16:04:05+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:04:05+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:04:05+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:04:05+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7f2211ffc950>
+2015-02-11 16:04:06+0200 [HonsshServerTransport,0,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:04:06+0200 [HonsshServerTransport,0,10.10.20.166] outgoing: aes128-ctr hmac-md5 zlib
+2015-02-11 16:04:06+0200 [HonsshServerTransport,0,10.10.20.166] incoming: aes128-ctr hmac-md5 zlib
+2015-02-11 16:04:07+0200 [HonsshServerTransport,0,10.10.20.166] NEW KEYS
+2015-02-11 16:04:07+0200 [HonsshServerTransport,0,10.10.20.166] [SERVER] CONNECTION TO HONEYPOT NOT READY, BUFFERING PACKET
+2015-02-11 16:04:15+0200 [-] [SERVER][ERROR] COULD NOT CONNECT TO HONEYPOT AFTER 10 SECONDS - DISCONNECTING CLIENT
+2015-02-11 16:04:15+0200 [-] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:04:15+0200 [HonsshServerTransport,0,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:04:15+0200 [HonsshServerTransport,0,10.10.20.166] connection lost
+2015-02-11 16:04:15+0200 [HonsshServerTransport,0,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:04:52+0200 [-] Received SIGTERM, shutting down.
+2015-02-11 16:04:52+0200 [-] (TCP Port 2222 Closed)
+2015-02-11 16:04:52+0200 [-] Stopping factory <honssh.server.HonsshServerFactory instance at 0x7f2211ffafc8>
+2015-02-11 16:04:52+0200 [-] Main loop terminated.
+2015-02-11 16:04:52+0200 [-] Server Shut Down.
+2015-02-11 16:06:24+0200 [-] Log opened.
+2015-02-11 16:06:24+0200 [-] twistd 15.0.0 (/home/aabed/honssh/env/bin/python 2.7.6) starting up.
+2015-02-11 16:06:24+0200 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2015-02-11 16:06:24+0200 [-] HonsshServerFactory starting on 2222
+2015-02-11 16:06:24+0200 [-] Starting factory <honssh.server.HonsshServerFactory instance at 0x7fcc4ca13fc8>
+2015-02-11 16:06:24+0200 [HonsshSlimClientTransport,client] [CLIENT] - SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2
+2015-02-11 16:06:24+0200 [HonsshSlimClientTransport,client] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:06:24+0200 [HonsshSlimClientTransport,client] connection lost
+2015-02-11 16:06:24+0200 [HonsshSlimClientTransport,client] Stopping factory <honssh.client.HonsshSlimClientFactory instance at 0x7fcc4ca1a128>
+2015-02-11 16:06:35+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:06:35+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:06:36+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:06:36+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7fcc4ca15950>
+2015-02-11 16:06:36+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:06:36+0200 [HonsshServerTransport,0,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:06:36+0200 [HonsshServerTransport,0,10.10.20.166] outgoing: aes128-ctr hmac-md5 zlib
+2015-02-11 16:06:36+0200 [HonsshServerTransport,0,10.10.20.166] incoming: aes128-ctr hmac-md5 zlib
+2015-02-11 16:06:36+0200 [HonsshServerTransport,0,10.10.20.166] NEW KEYS
+2015-02-11 16:06:37+0200 [HonsshServerTransport,0,10.10.20.166] [SERVER] CONNECTION TO HONEYPOT NOT READY, BUFFERING PACKET
+2015-02-11 16:06:37+0200 [HonsshClientTransport,client] kex alg, key alg: diffie-hellman-group-exchange-sha1 ssh-rsa
+2015-02-11 16:06:37+0200 [HonsshClientTransport,client] outgoing: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:37+0200 [HonsshClientTransport,client] incoming: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:37+0200 [HonsshClientTransport,client] REVERSE
+2015-02-11 16:06:37+0200 [HonsshClientTransport,client] NEW KEYS
+2015-02-11 16:06:37+0200 [HonsshClientTransport,client] [CLIENT] - Client Connection Secured
+2015-02-11 16:06:38+0200 [-] [SERVER] CLIENT CONNECTED, REPLAYING BUFFERED PACKETS
+2015-02-11 16:06:38+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:06:41+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:06:50+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:06:50+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:06:51+0200 [honssh.server.HonsshServerFactory] Port Already in use. Not starting a new container
+2015-02-11 16:06:51+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:06:51+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c9a5290>
+2015-02-11 16:06:51+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:06:51+0200 [HonsshClientTransport,client] kex alg, key alg: diffie-hellman-group-exchange-sha1 ssh-rsa
+2015-02-11 16:06:51+0200 [HonsshClientTransport,client] outgoing: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:51+0200 [HonsshClientTransport,client] incoming: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:51+0200 [HonsshClientTransport,client] REVERSE
+2015-02-11 16:06:51+0200 [HonsshClientTransport,client] NEW KEYS
+2015-02-11 16:06:51+0200 [HonsshClientTransport,client] [CLIENT] - Client Connection Secured
+2015-02-11 16:06:51+0200 [HonsshServerTransport,1,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:06:51+0200 [HonsshServerTransport,1,10.10.20.166] outgoing: blowfish-ctr hmac-md5 none
+2015-02-11 16:06:51+0200 [HonsshServerTransport,1,10.10.20.166] incoming: blowfish-ctr hmac-md5 none
+2015-02-11 16:06:52+0200 [HonsshServerTransport,1,10.10.20.166] NEW KEYS
+2015-02-11 16:06:52+0200 [-] [SERVER] CLIENT CONNECTED, REPLAYING BUFFERED PACKETS
+2015-02-11 16:06:52+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:06:53+0200 [HonsshServerTransport,0,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:06:53+0200 [HonsshServerTransport,0,10.10.20.166] connection lost
+2015-02-11 16:06:53+0200 [HonsshServerTransport,0,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:06:53+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:06:53+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:06:53+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7fcc4ca15950>
+2015-02-11 16:06:53+0200 [HonsshServerTransport,1,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:06:53+0200 [HonsshServerTransport,1,10.10.20.166] connection lost
+2015-02-11 16:06:53+0200 [HonsshServerTransport,1,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:06:53+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:06:53+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:06:53+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c9a5290>
+2015-02-11 16:06:55+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:06:55+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:06:55+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:06:55+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c9a5ea8>
+2015-02-11 16:06:55+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:06:56+0200 [HonsshServerTransport,2,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:06:56+0200 [HonsshServerTransport,2,10.10.20.166] outgoing: aes128-ctr hmac-md5 zlib
+2015-02-11 16:06:56+0200 [HonsshServerTransport,2,10.10.20.166] incoming: aes128-ctr hmac-md5 zlib
+2015-02-11 16:06:56+0200 [HonsshServerTransport,2,10.10.20.166] NEW KEYS
+2015-02-11 16:06:56+0200 [HonsshServerTransport,2,10.10.20.166] [SERVER] CONNECTION TO HONEYPOT NOT READY, BUFFERING PACKET
+2015-02-11 16:06:56+0200 [HonsshClientTransport,client] kex alg, key alg: diffie-hellman-group-exchange-sha1 ssh-rsa
+2015-02-11 16:06:56+0200 [HonsshClientTransport,client] outgoing: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:56+0200 [HonsshClientTransport,client] incoming: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:56+0200 [HonsshClientTransport,client] REVERSE
+2015-02-11 16:06:56+0200 [HonsshClientTransport,client] NEW KEYS
+2015-02-11 16:06:56+0200 [HonsshClientTransport,client] [CLIENT] - Client Connection Secured
+2015-02-11 16:06:57+0200 [-] [SERVER] CLIENT CONNECTED, REPLAYING BUFFERED PACKETS
+2015-02-11 16:06:57+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:06:58+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:06:58+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:06:59+0200 [honssh.server.HonsshServerFactory] Port Already in use. Not starting a new container
+2015-02-11 16:06:59+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:06:59+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c9b2368>
+2015-02-11 16:06:59+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:06:59+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:06:59+0200 [honssh.server.HonsshServerFactory] Port Already in use. Not starting a new container
+2015-02-11 16:06:59+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:06:59+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c13a170>
+2015-02-11 16:06:59+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:06:59+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] kex alg, key alg: diffie-hellman-group-exchange-sha1 ssh-rsa
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] outgoing: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] incoming: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] kex alg, key alg: diffie-hellman-group-exchange-sha1 ssh-rsa
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] outgoing: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] incoming: aes256-ctr hmac-sha1 none
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] REVERSE
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] NEW KEYS
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] [CLIENT] - Client Connection Secured
+2015-02-11 16:06:59+0200 [HonsshServerTransport,4,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:06:59+0200 [HonsshServerTransport,4,10.10.20.166] outgoing: aes128-ctr hmac-md5 zlib
+2015-02-11 16:06:59+0200 [HonsshServerTransport,4,10.10.20.166] incoming: aes128-ctr hmac-md5 zlib
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] REVERSE
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] NEW KEYS
+2015-02-11 16:06:59+0200 [HonsshClientTransport,client] [CLIENT] - Client Connection Secured
+2015-02-11 16:06:59+0200 [HonsshServerTransport,3,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:06:59+0200 [HonsshServerTransport,3,10.10.20.166] outgoing: blowfish-ctr hmac-md5 none
+2015-02-11 16:06:59+0200 [HonsshServerTransport,3,10.10.20.166] incoming: blowfish-ctr hmac-md5 none
+2015-02-11 16:06:59+0200 [HonsshServerTransport,4,10.10.20.166] NEW KEYS
+2015-02-11 16:06:59+0200 [HonsshServerTransport,3,10.10.20.166] NEW KEYS
+2015-02-11 16:07:00+0200 [-] [SERVER] CLIENT CONNECTED, REPLAYING BUFFERED PACKETS
+2015-02-11 16:07:00+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:07:00+0200 [-] [SERVER] CLIENT CONNECTED, REPLAYING BUFFERED PACKETS
+2015-02-11 16:07:00+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:07:01+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:07:01+0200 [honssh.server.HonsshServerFactory] []
+2015-02-11 16:07:01+0200 [honssh.server.HonsshServerFactory] Port Already in use. Not starting a new container
+2015-02-11 16:07:01+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:07:01+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c141710>
+2015-02-11 16:07:01+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:07:01+0200 [HonsshClientTransport,client] kex alg, key alg: diffie-hellman-group-exchange-sha1 ssh-rsa
+2015-02-11 16:07:01+0200 [HonsshClientTransport,client] outgoing: aes256-ctr hmac-sha1 none
+2015-02-11 16:07:01+0200 [HonsshClientTransport,client] incoming: aes256-ctr hmac-sha1 none
+2015-02-11 16:07:01+0200 [HonsshClientTransport,client] REVERSE
+2015-02-11 16:07:01+0200 [HonsshClientTransport,client] NEW KEYS
+2015-02-11 16:07:01+0200 [HonsshClientTransport,client] [CLIENT] - Client Connection Secured
+2015-02-11 16:07:02+0200 [HonsshServerTransport,5,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:07:02+0200 [HonsshServerTransport,5,10.10.20.166] outgoing: blowfish-ctr hmac-md5 none
+2015-02-11 16:07:02+0200 [HonsshServerTransport,5,10.10.20.166] incoming: blowfish-ctr hmac-md5 none
+2015-02-11 16:07:02+0200 [HonsshServerTransport,5,10.10.20.166] NEW KEYS
+2015-02-11 16:07:02+0200 [-] [SERVER] CLIENT CONNECTED, REPLAYING BUFFERED PACKETS
+2015-02-11 16:07:02+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:07:11+0200 [HonsshServerTransport,2,10.10.20.166] [SERVER] - Entered command: pwd
+2015-02-11 16:07:20+0200 [HonsshServerTransport,2,10.10.20.166] [SERVER] - Entered command: ls Deskttop
+2015-02-11 16:07:23+0200 [HonsshServerTransport,2,10.10.20.166] [SERVER] - Entered command: [A^C
+2015-02-11 16:08:52+0200 [HonsshServerTransport,2,10.10.20.166] [SERVER] - Entered command: ps aux | grep ssh
+2015-02-11 16:08:59+0200 [HonsshServerTransport,2,10.10.20.166] [SERVER] - Entered command: netst -nltpst
+2015-02-11 16:09:04+0200 [HonsshServerTransport,2,10.10.20.166] [SERVER] - Entered command: touch lol
+2015-02-11 16:09:06+0200 [HonsshServerTransport,4,10.10.20.166] [SERVER] - Entered command: ls
+2015-02-11 16:09:09+0200 [HonsshServerTransport,5,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:09:09+0200 [HonsshServerTransport,5,10.10.20.166] connection lost
+2015-02-11 16:09:09+0200 [HonsshServerTransport,5,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:09:09+0200 [HonsshServerTransport,4,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:09:09+0200 [HonsshServerTransport,4,10.10.20.166] connection lost
+2015-02-11 16:09:09+0200 [HonsshServerTransport,4,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:09:09+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:09:09+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:09:09+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c141710>
+2015-02-11 16:09:09+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:09:09+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:09:09+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c13a170>
+2015-02-11 16:09:11+0200 [HonsshServerTransport,2,10.10.20.166] [SERVER] - Entered command: ls
+2015-02-11 16:09:12+0200 [HonsshServerTransport,2,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:09:12+0200 [HonsshServerTransport,2,10.10.20.166] connection lost
+2015-02-11 16:09:12+0200 [HonsshServerTransport,2,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:09:12+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:09:12+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:09:12+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c9a5ea8>
+2015-02-11 16:09:12+0200 [HonsshServerTransport,3,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:09:12+0200 [HonsshServerTransport,3,10.10.20.166] connection lost
+2015-02-11 16:09:13+0200 [HonsshServerTransport,3,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:09:13+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:09:13+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:09:13+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7fcc4c9b2368>
+2015-02-11 16:10:41+0200 [-] Received SIGTERM, shutting down.
+2015-02-11 16:10:41+0200 [-] (TCP Port 2222 Closed)
+2015-02-11 16:10:41+0200 [-] Stopping factory <honssh.server.HonsshServerFactory instance at 0x7fcc4ca13fc8>
+2015-02-11 16:10:41+0200 [-] Main loop terminated.
+2015-02-11 16:10:41+0200 [-] Server Shut Down.
+2015-02-11 16:10:42+0200 [-] Log opened.
+2015-02-11 16:10:42+0200 [-] twistd 15.0.0 (/home/aabed/honssh/env/bin/python 2.7.6) starting up.
+2015-02-11 16:10:42+0200 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2015-02-11 16:10:42+0200 [-] HonsshServerFactory starting on 2222
+2015-02-11 16:10:42+0200 [-] Starting factory <honssh.server.HonsshServerFactory instance at 0x7f5a568bca70>
+2015-02-11 16:10:42+0200 [HonsshSlimClientTransport,client] [CLIENT] - SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2
+2015-02-11 16:10:42+0200 [HonsshSlimClientTransport,client] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:10:42+0200 [HonsshSlimClientTransport,client] connection lost
+2015-02-11 16:10:42+0200 [HonsshSlimClientTransport,client] Stopping factory <honssh.client.HonsshSlimClientFactory instance at 0x7f5a568c54d0>
+2015-02-11 16:10:53+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:10:54+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:10:54+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7f5a568be2d8>
+2015-02-11 16:10:54+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:10:54+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:10:54+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:10:54+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7f5a568be2d8>
+2015-02-11 16:10:54+0200 [HonsshServerTransport,0,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:10:54+0200 [HonsshServerTransport,0,10.10.20.166] outgoing: aes128-ctr hmac-md5 zlib
+2015-02-11 16:10:54+0200 [HonsshServerTransport,0,10.10.20.166] incoming: aes128-ctr hmac-md5 zlib
+2015-02-11 16:10:54+0200 [HonsshServerTransport,0,10.10.20.166] NEW KEYS
+2015-02-11 16:10:55+0200 [HonsshServerTransport,0,10.10.20.166] [SERVER] CONNECTION TO HONEYPOT NOT READY, BUFFERING PACKET
+2015-02-11 16:11:04+0200 [-] [SERVER][ERROR] COULD NOT CONNECT TO HONEYPOT AFTER 10 SECONDS - DISCONNECTING CLIENT
+2015-02-11 16:11:04+0200 [-] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:11:04+0200 [HonsshServerTransport,0,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:11:04+0200 [HonsshServerTransport,0,10.10.20.166] connection lost
+2015-02-11 16:11:04+0200 [HonsshServerTransport,0,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:11:12+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:11:12+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:11:12+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7f5a56835710>
+2015-02-11 16:11:13+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:11:13+0200 [HonsshServerTransport,1,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:11:13+0200 [HonsshServerTransport,1,10.10.20.166] outgoing: aes128-ctr hmac-md5 zlib
+2015-02-11 16:11:13+0200 [HonsshServerTransport,1,10.10.20.166] incoming: aes128-ctr hmac-md5 zlib
+2015-02-11 16:11:13+0200 [HonsshServerTransport,1,10.10.20.166] NEW KEYS
+2015-02-11 16:11:13+0200 [HonsshServerTransport,1,10.10.20.166] [SERVER] CONNECTION TO HONEYPOT NOT READY, BUFFERING PACKET
+2015-02-11 16:11:14+0200 [HonsshClientTransport,client] kex alg, key alg: diffie-hellman-group-exchange-sha1 ssh-rsa
+2015-02-11 16:11:14+0200 [HonsshClientTransport,client] outgoing: aes256-ctr hmac-sha1 none
+2015-02-11 16:11:14+0200 [HonsshClientTransport,client] incoming: aes256-ctr hmac-sha1 none
+2015-02-11 16:11:14+0200 [HonsshClientTransport,client] REVERSE
+2015-02-11 16:11:14+0200 [HonsshClientTransport,client] NEW KEYS
+2015-02-11 16:11:14+0200 [HonsshClientTransport,client] [CLIENT] - Client Connection Secured
+2015-02-11 16:11:14+0200 [-] [SERVER] CLIENT CONNECTED, REPLAYING BUFFERED PACKETS
+2015-02-11 16:11:15+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:11:16+0200 [honssh.server.HonsshServerFactory] [SERVER] - disabling diffie-hellman-group-exchange because we cannot find moduli file
+2015-02-11 16:11:16+0200 [honssh.server.HonsshServerFactory] Port Already in use. Not starting a new container
+2015-02-11 16:11:16+0200 [honssh.server.HonsshServerFactory] [ADV-NET] - Advanced Networking disabled - Using client_addr
+2015-02-11 16:11:16+0200 [honssh.server.HonsshServerFactory] Starting factory <honssh.client.HonsshClientFactory instance at 0x7f5a568597a0>
+2015-02-11 16:11:16+0200 [Uninitialized] [CLIENT] - New client connection
+2015-02-11 16:11:16+0200 [HonsshClientTransport,client] kex alg, key alg: diffie-hellman-group-exchange-sha1 ssh-rsa
+2015-02-11 16:11:16+0200 [HonsshClientTransport,client] outgoing: aes256-ctr hmac-sha1 none
+2015-02-11 16:11:16+0200 [HonsshClientTransport,client] incoming: aes256-ctr hmac-sha1 none
+2015-02-11 16:11:16+0200 [HonsshClientTransport,client] REVERSE
+2015-02-11 16:11:16+0200 [HonsshClientTransport,client] NEW KEYS
+2015-02-11 16:11:16+0200 [HonsshClientTransport,client] [CLIENT] - Client Connection Secured
+2015-02-11 16:11:16+0200 [HonsshServerTransport,2,10.10.20.166] kex alg, key alg: diffie-hellman-group1-sha1 ssh-rsa
+2015-02-11 16:11:16+0200 [HonsshServerTransport,2,10.10.20.166] outgoing: blowfish-ctr hmac-md5 none
+2015-02-11 16:11:16+0200 [HonsshServerTransport,2,10.10.20.166] incoming: blowfish-ctr hmac-md5 none
+2015-02-11 16:11:17+0200 [HonsshServerTransport,2,10.10.20.166] NEW KEYS
+2015-02-11 16:11:17+0200 [-] [SERVER] CLIENT CONNECTED, REPLAYING BUFFERED PACKETS
+2015-02-11 16:11:17+0200 [HonsshClientTransport,client] [SSH] - Detected Public Key Auth - Disabling!
+2015-02-11 16:11:24+0200 [HonsshServerTransport,1,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:11:24+0200 [HonsshServerTransport,1,10.10.20.166] connection lost
+2015-02-11 16:11:24+0200 [HonsshServerTransport,1,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:11:24+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:11:24+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:11:24+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7f5a56835710>
+2015-02-11 16:11:24+0200 [HonsshServerTransport,2,10.10.20.166] Disconnecting with error, code 10
+	reason: user closed connection
+2015-02-11 16:11:24+0200 [HonsshServerTransport,2,10.10.20.166] connection lost
+2015-02-11 16:11:24+0200 [HonsshServerTransport,2,10.10.20.166] [OUTPUT] Lost Connection with the attacker: 10.10.20.166
+2015-02-11 16:11:24+0200 [HonsshClientTransport,client] connection lost
+2015-02-11 16:11:24+0200 [HonsshClientTransport,client] [CLIENT] - Lost connection with the honeypot: 127.0.0.1
+2015-02-11 16:11:24+0200 [HonsshClientTransport,client] Stopping factory <honssh.client.HonsshClientFactory instance at 0x7f5a568597a0>
+2015-02-11 16:12:58+0200 [-] Received SIGTERM, shutting down.
+2015-02-11 16:12:58+0200 [-] (TCP Port 2222 Closed)
+2015-02-11 16:12:58+0200 [-] Stopping factory <honssh.server.HonsshServerFactory instance at 0x7f5a568bca70>
+2015-02-11 16:12:58+0200 [-] Main loop terminated.
+2015-02-11 16:12:58+0200 [-] Server Shut Down.

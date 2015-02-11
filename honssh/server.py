@@ -32,6 +32,7 @@ from twisted.internet import reactor, defer, threads
 from honssh import client, output, networking, honsshServer
 from honssh.protocols import sftp, ssh
 from kippo.core.config import config
+from kippo.core import honeydocker
 from kippo.dblog import mysql
 from hpfeeds import hpfeeds
 import datetime, time, os, struct, re, subprocess, random
@@ -42,6 +43,12 @@ class HonsshServerTransport(honsshServer.HonsshServer):
     def connectionMade(self):
         self.timeoutCount = 0
         self.interactors = []
+        global dockerId
+        try:
+            dockerId=honeydocker.start_container()  
+        except:
+            log.msg("Port Already in use. Not starting a new container")
+        
         clientFactory = client.HonsshClientFactory()
         clientFactory.server = self
 
@@ -78,7 +85,12 @@ class HonsshServerTransport(honsshServer.HonsshServer):
         if self.transport.sessionno in self.factory.sessions:
             del self.factory.sessions[self.transport.sessionno]
         honsshServer.HonsshServer.connectionLost(self, reason)
-               
+
+        try:   
+            if len(self.factory.sessions.keys())==0:
+                honeydocker.stop_container(dockerId)
+        except:
+            pass   
         self.out.connectionLost()
         self.net.removeNetworking(self.factory.sessions)
         

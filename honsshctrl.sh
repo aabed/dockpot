@@ -48,7 +48,7 @@ declare honssh_tac="honssh.tac"
 declare honssh_log="logs/honssh.log"
 declare honssh_pid="honssh.pid"
 
-
+declare docker_image_name=`awk -F "=" '/image_name/ {print $2}' honssh.cfg`
 # ----- We require one argument.
 if [ $# != 1 ]
 then
@@ -74,7 +74,18 @@ function start_honssh()
     if [ ! -e $honssh_pid ]
     then
         echo "Starting honssh in background..."
+        docker run -d -p 22:22 $docker_image_name >docker.id
+        if [[  $? -ne 0 ]]
+            then
+                   echo "Another docker is running on port 22 exiting"
+                    exit
+                    
+        else
+            
         twistd -y $honssh_tac -l $honssh_log --pidfile $honssh_pid
+        sleep 5
+        docker stop `cat docker.id`
+fi
     else
         echo "ERROR: There appears to be a PID file already, HonSSH might be running"
         exit 1

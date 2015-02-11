@@ -1,0 +1,5 @@
+env/
+id_*
+*.pyc
+logs/
+sessions/
