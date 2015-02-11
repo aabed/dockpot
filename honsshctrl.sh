@@ -83,7 +83,6 @@ function start_honssh()
         else
             
         twistd -y $honssh_tac -l $honssh_log --pidfile $honssh_pid
-        sleep 5
         docker stop `cat docker.id`
 fi
     else
