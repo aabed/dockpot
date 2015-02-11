@@ -1,5 +1,0 @@
-2015-02-11 16:11:17 - [POT  ] testing-honssh2
-2015-02-11 16:11:16 - [SSH  ] Incoming Connection from 10.10.20.166:5527 - SSH-2.0-SecureBlackbox
-2015-02-11 16:11:17 - [SSH  ] Login Successful: root:root
-2015-02-11 16:11:18 - [SFTP1] Opened Channel
-2015-02-11 16:11:24 - [SSH  ] Lost Connection with 10.10.20.166

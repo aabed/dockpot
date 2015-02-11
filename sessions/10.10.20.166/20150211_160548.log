@@ -1,6 +1,0 @@
-2015-02-11 16:05:50 - [POT  ] testing-honssh2
-2015-02-11 16:05:48 - [SSH  ] Incoming Connection from 10.10.20.166:21476 - SSH-2.0-OpenSSH_6.2
-2015-02-11 16:05:50 - [SSH  ] Login Successful: root:root
-2015-02-11 16:05:51 - [TERM0] Opened Channel
-2015-02-11 16:06:00 - [TERM0] Closed Channel
-2015-02-11 16:06:00 - [SSH  ] Lost Connection with 10.10.20.166
