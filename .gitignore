@@ -3,3 +3,4 @@ id_*
 *.pyc
 logs/
 sessions/
+docker.id
